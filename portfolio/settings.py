@@ -29,7 +29,9 @@ ALLOWED_HOSTS = ['127.0.0.1' 'assassinsportfolio.herokuapp.com']
 
 
 # Application definition
-
+#################################
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#############################
 INSTALLED_APPS = [
     'myportfolio.apps.MyportfolioConfig',
     'django.contrib.admin',
@@ -119,12 +121,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 
 
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static")
+    os.path.join(BASE_DIR, "static"),
     
 ]
